@@ -7,7 +7,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class SingleThreadedServer implements Runnable {
-
     protected int serverPort = 8080;
     protected ServerSocket serverSocket = null;
     protected boolean isStopped = false;
