@@ -1,7 +1,6 @@
 package no.ntnu.idata2305.servers;
 
 import no.ntnu.idata2305.computation.SearchSimulator;
-import no.ntnu.idata2305.utils.ResponseGenerator;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -29,9 +28,6 @@ public class SingleThreadedServer implements Runnable {
                 Socket client = serverSocket.accept();
                 System.out.println("New client connected: " + client.getInetAddress().getHostAddress());
                 SearchSimulator.processClientRequest(serverSocket);
-                String responseHeader = ResponseGenerator.generatorResponseHeader(0);
-                String responseHTML = ResponseGenerator.generatorResponseHTML(0, 0);
-                System.out.println(responseHeader + responseHTML);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (Exception e) {
